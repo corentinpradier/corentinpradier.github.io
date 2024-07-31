@@ -1,0 +1,333 @@
+/* General css pattern for body, header and footer */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 0;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    overflow-x: hidden;
+}
+
+header {
+    /*background-color: rgba(54,92,114, 0.9);*/
+    background-color: rgba(22,25,44);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    padding: 10px 40px;
+    z-index: 1;
+
+    -webkit-backdrop-filter: blur(10px);
+    /* assure la compatibilité avec safari */
+    backdrop-filter: blur(10px);
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: -20px;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.title {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+/* Dropdownmenu */
+
+.dropdownmenu {
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.dropdownmenu ul {
+    display: none;
+}
+
+.dropdownmenu ul li {
+    display: block;
+    padding: 10px;
+    font-size: small;
+    text-align: center;
+    margin: 5px;
+}
+
+.dropdownmenu a {
+    display: block;
+    position: relative;
+}
+
+.dropdownmenu li:hover ul {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-36.5%);
+    top: 88px;
+    width: 150px;
+    /*background-color: rgba(54,92,114, 0.9);*/
+    background-color: rgba(22,25,44);
+    z-index: 100; 
+
+    /*Pourquoi cela ne fonctionne pas ?? */
+    -webkit-backdrop-filter: blur(10px);
+    /* assure la compatibilité avec safari */
+    backdrop-filter: blur(20px);
+
+}
+
+.dropdownmenu ul:hover {
+    display: block;
+
+}
+
+/* Transition dropdownmenu */
+
+.dropdownmenu li.button_pp .sous-menu {
+    /* Autres styles pour le sous-menu */
+    opacity: 0; /* Assure que le sous-menu n'est pas visible par défaut */
+    transition: opacity 0.4s; /* Transition de l'opacité pendant 1 seconde */
+
+}
+
+.dropdownmenu li.button_pp:hover .sous-menu {
+    opacity: 1; /* Lorsqu'en état :hover, le sous-menu devient visible */
+}
+
+
+/* Animation de soulignement des liens */
+.button_pp,
+.button {
+    color: rgb(240, 100, 45, 0.9);
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+}
+
+.button_pp {
+    display: inline-block;
+}
+
+.button_pp > a {
+    padding: 10px;
+    width: 100px;
+    margin: none;
+}
+
+.button_pp:after, .button:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    /*background: rgb(240, 100, 45, 0.9);*/
+    background: rgb(255,165,135);
+    background: rgb(168,24,41);
+
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.button_pp:hover:after, .button:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+p {
+    color: rgb(39, 55, 69);
+    line-height: 1.5em;
+    margin: 20px auto 0;
+    max-width: 1000px;
+    text-align: justify;
+}
+
+a {
+    /* color: rgb(137, 13, 215); */
+    color: rgb(255,165,135);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(22,25,44);
+    margin: 0;
+    padding: 50px;
+    /*     border-top: solid 4px #F5F5DC; */
+}
+
+
+/* Specific css to the index page */
+
+section {
+    background-color: rgb(245, 245, 220);
+    border-bottom: solid 2px white;
+}
+
+.intro-text p {
+    color: black;
+    padding-left: 500px;
+    font-size: 26px;
+
+    
+
+}
+
+.intro-text {
+    padding: 40px 40px;
+    background-color: rgb(245, 245, 230);
+
+}
+
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    padding: 80px;
+}
+
+.fade-in-text.visible {
+    opacity: 1;
+}
+
+.fade-in-text p {
+    font-size: 24px;
+    color: rgb(39, 55, 69);
+}
+
+.background-section {
+    background-image: url('../img/ours-polaires-village-abandonne.jpeg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    /* Ajuste la taille de l'image pour couvrir la section */
+    background-position: center;
+    /* Centre l'image dans la section */
+    color: white;
+    /* Couleur du texte, choisissez une couleur qui contraste bien avec l'image */
+    text-align: center;
+    /* Centre le texte dans la section */
+    padding: 50px;
+    /* Ajuste le padding selon vos besoins */
+}
+
+.two-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    /* Ajustez la largeur totale des colonnes selon vos besoins */
+    margin: 50px auto;
+    /* Ajustez la marge selon vos préférences */
+}
+
+.left-column,
+.right-column {
+    flex-basis: 70%;
+    /* Ajustez la largeur des colonnes individuelles selon vos préférences */
+}
+
+.left-column {
+    margin-right: 300px;
+    /* Espace entre les colonnes, ajustez selon vos préférences */
+}
+
+.right-column {
+    margin-left: 300px;
+    /* Espace entre les colonnes, ajustez selon vos préférences */
+}
+
+/* Justification du texte */
+.two-columns p {
+    text-align: justify;
+}
+
+#contact {
+    background-color: aqua;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+/* css pour le diaporama */
+
+main {
+    width: 60%;
+    margin: auto;
+}
+
+.diapo {
+    position: relative;
+}
+
+.elements {
+    display: flex;
+}
+
+.element {
+    flex: 1 0 100%;
+    position: relative;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    /* Ajout d'une bordure transparente pour créer de l'écart entre les images */
+}
+
+
+.element>a>img {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#nav-gauche,
+#nav-droite {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+#nav-gauche {
+    left: 0;
+}
+
+#nav-droite {
+    right: 0;
+}
+
+.images-diapo {
+    cursor: pointer;
+}
