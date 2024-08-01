@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    /*background-color: rgba(54,92,114, 0.9);*/
-    background-color: rgba(22,25,44);
+    /*Color of the header*/
+    background-color: rgba(0,63,92);
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -80,8 +80,8 @@ header ul li {
     transform: translateX(-36.5%);
     top: 88px;
     width: 150px;
-    /*background-color: rgba(54,92,114, 0.9);*/
-    background-color: rgba(22,25,44);
+    /*Color of the */
+    background-color: rgba(0,63,92);
     z-index: 100; 
 
     /*Pourquoi cela ne fonctionne pas ?? */
@@ -168,7 +168,8 @@ a {
 }
 
 footer {
-    background-color: rgba(22,25,44);
+    /*Color of the footer*/
+    background-color: rgba(0,63,92);
     margin: 0;
     padding: 50px;
     /*     border-top: solid 4px #F5F5DC; */
