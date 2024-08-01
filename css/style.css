@@ -55,6 +55,11 @@ h1 {
     color: rgb(246, 178, 33);
 }
 
+h3 {
+    text-align: right;
+    margin-right: 160px;
+}
+
 /* Dropdownmenu */
 
 .dropdownmenu {
@@ -356,4 +361,36 @@ main {
     border: 5px solid rgba(0,86,112); /* Changez la couleur et l'épaisseur selon vos besoins */
     border-radius: 10px; /* Facultatif : pour des bords arrondis */
     padding: 5px; /* Facultatif : pour ajouter de l'espace entre l'image et la bordure */
+    margin-bottom: 70px;
+}
+
+.horizontal-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.horizontal-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-bar a:hover {
+    background-color: #ddd;
+}
+
+.horizontal-bar img {
+    width: 100px;
+    height: 100px;
 }
