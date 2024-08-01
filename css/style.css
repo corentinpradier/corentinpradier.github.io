@@ -351,3 +351,9 @@ main {
     width: 300px; /* Ajustez la largeur selon vos besoins */
     height: auto;
 }
+
+.bordure {
+    border: 5px solid rgba(0,86,112); /* Changez la couleur et l'épaisseur selon vos besoins */
+    border-radius: 10px; /* Facultatif : pour des bords arrondis */
+    padding: 5px; /* Facultatif : pour ajouter de l'espace entre l'image et la bordure */
+}
