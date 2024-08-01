@@ -361,7 +361,8 @@ main {
     border: 5px solid rgba(0,86,112); /* Changez la couleur et l'épaisseur selon vos besoins */
     border-radius: 10px; /* Facultatif : pour des bords arrondis */
     padding: 5px; /* Facultatif : pour ajouter de l'espace entre l'image et la bordure */
-    margin-bottom: 70px;
+    margin-bottom: 200px;
+    margin-top: 20px;
 }
 
 .horizontal-bar {
@@ -381,7 +382,6 @@ main {
     text-decoration: none;
     margin: 0 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -393,4 +393,5 @@ main {
 .horizontal-bar img {
     width: 100px;
     height: 100px;
+    border-radius: 8px;
 }
