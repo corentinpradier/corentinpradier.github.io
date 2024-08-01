@@ -1,0 +1,177 @@
+
+/* Dropdown menu */
+
+.dropdownmenu {
+    background-color: #666;
+    width: 140px; /* Largeur du menu */
+  }
+  .dropdownmenu,
+  .dropdownmenu ul {
+    /* Suppression des puces et des marges pour les listes du menu et des sous-menus */
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .dropdownmenu ul {
+    /* Masquage des sous-menu par defaut */
+    display: none;
+  }
+  .dropdownmenu li {
+    /* Positionnement relative des elements de menu pour pouvoir positionner les sous-menu correctement en absolu */
+    position:relative;
+  }
+
+  .dropdownmenu a {
+    /* On transforme les liens en bloc pour pouvoir les dimensionner */
+    display: block;
+ 
+  }
+  .dropdownmenu li:hover ul {
+    /* Affichage du soumenu au survol */
+    display: block;
+    /* Positionnement du sous-menu */
+    position: absolute;
+   
+    z-index: 100; /* Gestion de la superposition des sous-menus par rapport au reste de la page */
+  }
+  .dropdownmenu ul a {
+    /* Changement de l'affichage des liens des sous-menus pour ne pas les afficher en inline-block comme les liens de menu, ils seront donc verticaux */
+    display: inline;
+  }
+  /* Gestion des couleurs */
+  .dropdownmenu li {
+    background-color: #666; /* Couleur d'arriere-plan du menu */
+  }
+  .dropdownmenu li a {
+    color: #ccc; /* Couleur du texte du menu */
+  }
+  .dropdownmenu li:hover {
+    background-color: #000; /* Couleur d'arriere-plan du menu au survol */
+  }
+  .dropdownmenu li:hover a {
+    color: #fff; /* Couleur du texte du menu au survol */
+  }
+  .dropdownmenu ul li {
+    background-color: #ccc; /* Couleur d'arriere-plan des sous-menu */
+  }
+  .dropdownmenu ul li:hover {
+    background-color: #000; /* Couleur d'arriere-plan des sous-menu au survol */
+  }
+  .dropdownmenu ul li a {
+    color: #666; /* Couleur du texte des sous-menu */
+  }
+  .dropdownmenu ul li:hover a {
+    color: #f00; /* Couleur du texte des sous-menu au survol */
+  }
+
+
+
+
+
+
+
+
+
+
+
+.dropdownmenu ul {
+    /* Masquage des sous-menu par defaut */
+    display: none;
+}
+
+.dropdownmenu a {
+    /* On transforme les liens en bloc pour pouvoir les dimensionner */
+    display: flex;
+}
+
+.dropdownmenu li:hover ul {
+    /* Affichage du soumenu au survol */
+    display: block;
+    /* Positionnement du sous-menu */
+    position: absolute;
+   
+    z-index: 100; /* Gestion de la superposition des sous-menus par rapport au reste de la page */
+  }
+
+  .dropdownmenu ul a {
+    /* Changement de l'affichage des liens des sous-menus pour ne pas les afficher en inline-block comme les liens de menu, ils seront donc verticaux */
+    display: inline-flex;
+  }
+
+.liens {
+    display: inline-flex;
+  }
+
+
+
+
+
+
+
+
+.dropdownmenu {
+    width: 50%px;
+    /* Largeur du menu principal */
+}
+
+.dropdownmenu li {
+    display: inline-block;
+    position: relative;
+    width: 130px;
+    /* Largeur fixe pour les menus principaux */
+    text-align: center;
+}
+
+.dropdownmenu ul {
+    /* Masquage des sous-menu par defaut */
+    display: none;
+}
+
+.dropdownmenu a {
+    /* On transforme les liens en bloc pour pouvoir les dimensionner */
+    display: inline;
+    text-align: center;
+}
+
+.dropdownmenu li:hover ul {
+    /* Affichage du soumenu au survol */
+    display: block;
+    /* Positionnement du sous-menu */
+    position: absolute;
+
+    z-index: 100;
+    /* Gestion de la superposition des sous-menus par rapport au reste de la page */
+    background-color: black;
+
+    width: 150px;
+    text-align: center;
+    top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.dropdownmenu ul a {
+    /* Changement de l'affichage des liens des sous-menus pour ne pas les afficher en inline-block comme les liens de menu, ils seront donc verticaux */
+    display: flex;
+
+    margin-left: -27px;
+    margin-right: auto;
+
+    font-size: small;
+    width: 150px;
+    border: solid 2px;
+
+    padding: 10px 10px;
+}
+
+.dropdownmenu li:hover ul li a {
+    /* Changement de l'affichage des liens des sous-menus pour ne pas les afficher en inline-block comme les liens de menu, ils seront donc verticaux */
+    display: flex;
+    text-align: center;
+}
