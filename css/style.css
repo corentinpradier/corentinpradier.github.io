@@ -23,8 +23,14 @@ h1 {
     color: rgb(246, 178, 33);
 }
 
+
 h3 {
     color: rgba(0,86,112);
+}
+
+h4 {
+    color: rgba(0,86,112);
+    margin-bottom: 0;
 }
 
 
