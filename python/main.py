@@ -3,5 +3,4 @@ from analyse import plot_time_series
 
 
 activities = recuperation_API_strava()
-
 plot_time_series(activities)

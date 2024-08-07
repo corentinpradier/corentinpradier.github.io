@@ -28,3 +28,14 @@ def recuperation_API_strava():
     else:
         print("Erreur lors de la récupération des activités :", response.json())
 
+
+def get_main_datas(activities):
+    activities = recuperation_API_strava()
+    main_datas = {
+        "distance" : activities['distance']/1000,
+        "moving_time" : activities['moving_time']/60,
+        "average_speed" : activities['average_speed']*3.6,
+        "max_speed" : activities['max_speed']*3.6
+        }
+    return main_datas
+
