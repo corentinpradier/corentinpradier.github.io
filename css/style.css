@@ -23,6 +23,11 @@ h1 {
     color: rgb(246, 178, 33);
 }
 
+.title-fix{
+    opacity: 1;
+    color: rgb(246, 178, 33);
+}
+
 
 h3 {
     color: rgba(0,86,112);
@@ -96,6 +101,10 @@ h4 {
     opacity: 1; /* Lorsqu'en état :hover, le sous-menu devient visible */
 }
 
+.login-button a {
+    padding: 0; /* Retirer le padding par défaut */
+    width: auto; /* Ajuster la largeur à celle du contenu */
+}
 
 p {
     color: rgb(39, 55, 69);

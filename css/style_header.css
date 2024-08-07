@@ -24,12 +24,20 @@ header ul {
 }
 
 header ul li {
-    display: inline-block;
+    display: flex;
     margin: 0 5px;
     padding: 10px 15px;
     cursor: pointer;
     font-size: 1.5rem;
     text-decoration: none;
+}
+
+header ul li.login-button a {
+    display: flex;
+    align-items: center; /* Centrer l'icône verticalement */
+    padding: 0; /* Retirer le padding autour de l'icône */
+    padding-bottom: 10px;
+    width: auto; /* Ajuster la largeur à celle du contenu */
 }
 
 /* Animation de soulignement des liens */
