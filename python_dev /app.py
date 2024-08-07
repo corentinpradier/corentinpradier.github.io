@@ -27,38 +27,33 @@ new_access_token, new_refresh_token = refresh_access_token(current_refresh_token
 print(f"New Access Token: {new_access_token}")
 print(f"New Refresh Token: {new_refresh_token}")
 
-
+##############################################@
 
 from flask import Flask, render_template
-from stravalib.client import Client
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../', static_folder='')  # Dossier parent pour trouver index.html
 
-# Utilisez le jeton d'accès obtenu
-ACCESS_TOKEN = 'access_token'
-
-strava_client = Client()
-strava_client.access_token = ACCESS_TOKEN
 
 @app.route('/')
 def index():
-    activities = get_recent_activities()
+    # Remplacez 'access_token' par votre jeton d'accès réel
+    access_token = new_access_token
+    
+    headers = {
+        'Authorization': f'Bearer {access_token}'
+    }
+    
+    response = requests.get('https://www.strava.com/api/v3/athlete/activities', headers=headers)
+    
+    if response.status_code == 200:
+        activities = response.json()
+    else:
+        activities = []
+    
     return render_template('index.html', activities=activities)
 
-def get_recent_activities():
-    activities = strava_client.get_activities(limit=10)
-    return activities
-
-@app.route('/activity/<id>')
-def activity_detail(id):
-    activity = get_activity_by_id(id)
-    return render_template('activity.html', activity=activity)
-
-def get_activity_by_id(activity_id):
-    activity = strava_client.get_activity(activity_id)
-    return activity
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
 
 
