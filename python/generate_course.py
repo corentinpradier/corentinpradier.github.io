@@ -1,3 +1,11 @@
+import json
+
+# Charger les activités depuis le fichier JSON
+with open('../datas/activities.json', 'r') as f:
+    activities = json.load(f)
+
+# Générer le HTML
+html_content = """
 <!DOCTYPE html>
 <html>
 
@@ -40,64 +48,43 @@
         
         <div id="timeline-section" class="content-section">
             <div class="timeline">
-                <section class="year">
-                    <div class="year-header">
-                        <h2>Chomage n°1</h2>
-                        <h3><em>Airparif - mai à août 2024</em></h3>
-                    </div>
-                    <div class="subjects">
-                        <div class="column">
-                            <h3>Distance</h3>
-                            <p></p>
-                        </div>
-                        <div class="column">
-                            <h3>Temps</h3>
-                            <p></p>
-                        </div>
-                        <div class="column">
-                            <h3>Vitesse moyenne</h3>
-                            <p></p>
-                        </div>
-                        <div class="column">
-                            <h3>Vitesse max</h3>
-                            <p></p>
-                        </div>
-                    </div>
-                </section>
-                <!-- Répétez la section .year pour chaque année -->
-                <section class="year">
-                    <div class="year-header">
-                        <h2>Stage d'ingénieur de recherche</h2>
-                        <h3><em>LMD (PLANETO) - mai à juillet 2023</em></h3>
-                        <span class="level">Master 1</span>
-                    </div>
-                    <div class="subjects">
-                        <div class="column">
-                            <h3>Description</h3>
-                            <p></p>
-                            <h3>Compétences acquises</h3>
-                            <p></p>
-                        </div>
-                    </div>
-                </section>
-                <section class="year">
-                    <div class="year-header">
-                        <h2>Stage en Recherche & Développement</h2>
-                        <h3><em>Laboratoire APC - mai à juin 2022</em></h3>
-                        <span class="level">Licence 3</span>
-                    </div>
-                    <div class="subjects">
-                        <div class="column">
-                            <h3>Description</h3>
-                            <p></p>
-                            <h3>Compétences acquises</h3>
-                            <p></p>
-                        </div>
-                    </div>
-                </section>
+"""
+
+L = len(activities)
+for i, activity in enumerate(activities):
+    distance_km = activity['distance'] / 1000  # Convert meters to kilometers
+    moving_time_min = activity['moving_time'] / 60  # Convert seconds to minutes
+    avrage_speed = activity['average_speed']*3.6  # Calculate average speed in km/h
+    max_speed = activity['max_speed']*3.6
+
+    html_content += f"""
+    <section class="year">
+        <div class="year-header">
+            <h2>Course n°{L - i}</h2>
+            <h3><em>{activity['start_date_local']}</em></h3>
+        </div>
+        <div class="subjects">
+            <div class="column">
+                <h3>Distance</h3>
+                <p>{distance_km:.2f} km</p>
+            </div>
+            <div class="column">
+                <h3>Temps</h3>
+                <p>{moving_time_min:.2f} min</p>
+            </div>
+            <div class="column">
+                <h3>Vitesse moyenne</h3>
+                <p>{avrage_speed:.2f} km/h</p>
+            </div>
+             <div class="column">
+                <h3>Vitesse max</h3>
+                <p>{max_speed:.2f} km/h</p>
             </div>
         </div>
+    </section>
+    """
 
+html_content += """
         <div id="results-section" class="content-section">
             <iframe src="../python/strava_activities.html" width="80%" height="600" style="border:none;"></iframe>
         </div>
@@ -124,3 +111,9 @@
 </body>
 
 </html>
+
+"""
+
+# Enregistrer le HTML généré dans un fichier
+with open('../private/course.html', 'w') as f:
+    f.write(html_content)
