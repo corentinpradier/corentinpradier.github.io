@@ -64,7 +64,7 @@ def plot_time_series(activities):
             title="Valeurs",
             titlefont=dict(size=14),
             tickfont=dict(size=14),
-            range=[0, max(df['distance'].max(), df['moving_time'].max(), df['average_speed'].max(), df['max_speed'].max()) * 1.1]
+            range=[0, max(df['distance'].max()/1000, df['moving_time'].max()/60, df['average_speed'].max()*3.6, df['max_speed'].max()*3.6) * 1.1]
         ),
         xaxis=dict(
             title="Date",
