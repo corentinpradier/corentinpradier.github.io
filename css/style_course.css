@@ -89,3 +89,16 @@
 .slide-out-right {
     animation: slideOutToRight 0.5s forwards;
 }
+
+
+.timecase {
+    text-align: center;
+}
+
+.timecase h3 {
+    font-size: 20px;
+}
+
+.timecase p {
+    text-align: center;
+}
