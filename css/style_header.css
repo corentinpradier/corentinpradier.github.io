@@ -78,3 +78,11 @@ header ul li.login-button a {
     width: 100%;
     left: 0;
 }
+
+.bandeau {
+    background-color: black;
+}
+
+/* .bandeau .title {
+    color: white;
+} */
