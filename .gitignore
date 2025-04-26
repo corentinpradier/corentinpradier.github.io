@@ -1,9 +1,0 @@
-# Node.js
-server/node_modules/
-npm-debug.log
-python_dev/
-.env
-.DS_Store
-*.pyc
-__pycache__/
-
