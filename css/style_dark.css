@@ -1,0 +1,45 @@
+/* Styles pour le Mode Sombre */
+body.dark-theme {
+    background-color: #1a1a1a; /* Fond sombre */
+    color: #e0e0e0;       /* Texte clair */
+}
+
+/* Adaptez les couleurs des autres éléments si nécessaire */
+body.dark-theme .header {
+    background-color: #1f6d5b; /* Header plus sombre */
+    /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ /* Ombre optionnelle */
+}
+
+body.dark-theme .header a {
+    color: #f0f0f0; /* Liens du header clairs */
+}
+
+body.dark-theme .header ul {
+    background-color: #333; /* Fond de la nav interne */
+}
+
+body.dark-theme .footer {
+    color: #aaa;
+}
+
+/* body.dark-theme .footer a i {
+    color: #00aaff; 
+} */
+
+body.dark-theme .toggle-circle {
+    background-color: black; /* Optionnel: changer le fond du rail en mode light */
+}
+
+body.dark-theme .dark-icon {
+    background-color: #f0f0f0;
+}
+
+body.dark-theme .page-menu {
+    background-color: #f0f0f0;
+}
+
+body.dark-theme .item-menu a {
+    color:black;
+}
+
+/* ... ajoutez d'autres règles pour les éléments spécifiques ... */

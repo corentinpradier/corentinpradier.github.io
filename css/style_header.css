@@ -1,88 +1,192 @@
-/* CSS for header */
-
-header {
-    /*Color of the header*/
-    background-color: rgba(0,86,112, 0.9);
-    margin: 0;
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0;
+    background-color: #f0f0f0;
+    /* border-radius: 60px; */
+    padding: 0px 40px;
+    margin: 0;
     position: sticky;
-    padding: 10px 40px;
-    z-index: 1;
-
-    -webkit-backdrop-filter: blur(10px);
-    /* assure la compatibilité avec safari */
-    backdrop-filter: blur(10px);
+    top: 0px;
+    left: 0px;      
+    right: 0px;
+    z-index: 1000;
+    transition: top 0.4s ease-in-out;
+    box-sizing: border-box; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
-    margin: -20px;
-}
-
-header ul li {
-    display: flex;
-    margin: 0 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-header ul li.login-button a {
-    display: flex;
-    align-items: center; /* Centrer l'icône verticalement */
-    padding: 0; /* Retirer le padding autour de l'icône */
-    padding-bottom: 10px;
-    width: auto; /* Ajuster la largeur à celle du contenu */
-}
-
-/* Animation de soulignement des liens */
-
-.button_pp,
-.button {
-    color: rgb(240, 100, 45, 0.9);
-    text-transform: uppercase;
-    text-decoration: none;
-    position: relative;
-}
-
-.button_pp {
-    display: inline-block;
-}
-
-.button_pp > a {
-    padding: 10px;
-    width: 160px;
-    margin: none;
-}
-
-.button_pp:after, .button:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 3px;
-    left: 50%;
-    position: absolute;
-    background: rgb(246, 178, 33);
-
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-
-.button_pp:hover:after, .button:hover:after {
-    width: 100%;
-    left: 0;
-}
-
-.bandeau {
-    background-color: black;
-}
-
-/* .bandeau .title {
-    color: white;
+/* .header--hidden {
+    top: -100px;
 } */
+
+.header-right-group {
+    display: flex;         /* Rend ce groupe flexible */
+    align-items: center;   /* Aligne verticalement la liste et le bouton */
+    gap: 20px;             /* Définit l'espace entre la liste ul et le bouton dark mode */
+}
+
+.header.scrolled {
+    position: sticky;
+    top: 10px;
+    width: 100%;
+    z-index: 1;
+}
+
+.header .title {
+    padding: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.header ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding: 10px 10px;
+}
+
+.header ul li {
+    display: inline-block;
+    padding: 0px 40px;
+    font-size: 1.3rem;
+}
+
+.header ul li > a,
+.header .title {
+    display: inline-flex; /* Pour bien aligner le texte et l'icône */
+    align-items: center;
+    padding: 10px 20px; /* Ajuster le padding ici */
+    text-decoration: none;
+    color: black;
+    border-radius: 30px;
+
+}
+
+/* Style pour l'icône flèche */
+.header ul li > a .fa-caret-down {
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+}
+
+/* Menu déroulant */
+.header .dropdown-menu {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    justify-items: center;
+    top: 100%; /* Juste en dessous du lien parent */
+    left: 50%; /* Commence au milieu du li parent */
+    transform: translateX(-50%); /* Centre le menu par rapport au li parent */
+    background-color: white; /* Fond du menu */
+    min-width: 200px; /* Largeur minimale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Ombre portée */
+    border-radius: 30px;
+    padding: 10px 0; /* Padding vertical, pas horizontal */
+    margin-top: 8px; /* Petit espace entre le lien et le menu */
+    list-style: none; /* Enlève les puces */
+    z-index: 1001; /* S'assurer qu'il est au-dessus des autres éléments */
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+/* Style pour afficher le menu */
+.dropdown-menu.show {
+    display: block;
+}
+
+.header ul li.dropdown-container.open > a .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+/* Éléments dans le menu déroulant */
+.dropdown-menu li {
+    display: block; /* Les éléments s'empilent verticalement */
+    padding: 0; /* Reset le padding du li parent */
+}
+
+.dropdown-menu li a {
+    display: block; /* Toute la ligne est cliquable */
+    padding: 10px 20px; /* Padding des liens du menu */
+    color: #333; /* Couleur du texte */
+    font-size: 1rem; /* Taille de police ajustée */
+    text-decoration: none;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0; /* Effet au survol */
+    color: #111;
+}
+
+
+/* bouton dark mode */
+.dark-mode-toggle {
+    background-color: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    width: 70px;
+    height: 35px;
+    outline: none;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-shrink: 0; /* Empêche le bouton de rétrécir ! */
+}
+
+.toggle-circle {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    width: 27px;
+    height: 27px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.dark-mode-toggle.active {
+    display: flex;
+    background-color: #eee; /* Optionnel: changer le fond du rail en mode light */
+}
+
+.dark-mode-toggle.active .toggle-circle {
+    transform: translateX(34px); /* Déplace le cercle vers la droite (largeur_bouton - largeur_cercle - padding_gauche * 2) */
+                                 /* 70px - 27px - 4px - 4px = 35px */
+}
+
+.dark-mode-toggle .light-icon,
+.dark-mode-toggle .dark-icon {
+    font-size: 16px; /* Taille des icônes */
+    line-height: 27px; /* Pour centrer verticalement */
+    color: #ffcc33; /* Couleur soleil */
+    transition: opacity 0.3s ease;
+    z-index: 0; /* Derrière le cercle */
+    padding: 0 5px; /* Espacement interne */
+}
+
+.dark-mode-toggle .dark-icon {
+    color: #aaa; /* Couleur lune */
+    opacity: 1;
+}
+
+.dark-mode-toggle .light-icon {
+    color: #ffcc33; /* Couleur soleil */
+    opacity: 0;
+    z-index: 1;
+}
+
+.dark-mode-toggle.active .dark-icon {
+    opacity: 0; /* Cache l'icône lune en mode light */
+}
+
+.dark-mode-toggle.active .light-icon {
+    opacity: 1; /* Cache l'icône soleil en mode dark */
+}
+
