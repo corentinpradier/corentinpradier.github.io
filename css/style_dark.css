@@ -1,45 +1,123 @@
 /* Styles pour le Mode Sombre */
 body.dark-theme {
-    background-color: #1a1a1a; /* Fond sombre */
-    color: #e0e0e0;       /* Texte clair */
+    background-color: #363e5b;
+    color: #e0e0e0;
 }
 
-/* Adaptez les couleurs des autres éléments si nécessaire */
+/* ------ */
+/* HEADER */
+/* ------ */
 body.dark-theme .header {
-    background-color: #1f6d5b; /* Header plus sombre */
-    /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */ /* Ombre optionnelle */
+    background-color: #1c1f2b; 
 }
 
 body.dark-theme .header a {
-    color: #f0f0f0; /* Liens du header clairs */
+    color: #f0f0f0;
 }
-
-body.dark-theme .header ul {
-    background-color: #333; /* Fond de la nav interne */
-}
-
-body.dark-theme .footer {
-    color: #aaa;
-}
-
-/* body.dark-theme .footer a i {
-    color: #00aaff; 
-} */
 
 body.dark-theme .toggle-circle {
-    background-color: black; /* Optionnel: changer le fond du rail en mode light */
+    background-color: black;
 }
 
 body.dark-theme .dark-icon {
     background-color: #f0f0f0;
+}    
+
+/* Dropdown Menu */
+body.dark-theme .header .dropdown-menu li h3 {
+    color: #f0f0f0;
 }
 
-body.dark-theme .page-menu {
-    background-color: #f0f0f0;
+body.dark-theme .header .dropdown-menu li a {
+    color: #f0f0f0;
 }
 
-body.dark-theme .item-menu a {
-    color:black;
+body.dark-theme .header .dropdown-menu {
+    background-color: #1c1f2b;
 }
 
-/* ... ajoutez d'autres règles pour les éléments spécifiques ... */
+body.dark-theme .header .dropdown-menu > li > h3 {
+    color: #e5e5ff; 
+    border-bottom-color: #404866; 
+}
+
+body.dark-theme .header .dropdown-menu li a:hover {
+    color: #007BFF;
+}
+
+
+/* --------------- */
+/* Bandeaux page 1 */
+/* --------------- */
+body.dark-theme .band-1 {
+    background-color: #222533; /* Très sombre, proche du fond */
+}
+
+body.dark-theme .band-2 {
+    background-color: #262a3b; /* Légèrement plus clair/bleuté */
+}
+
+body.dark-theme .band-3 {
+    background-color: #2a2f43; /* Progression douce */
+}
+
+body.dark-theme .band-4 {
+    background-color: #2e344b; /* On continue d'éclaircir subtilement */
+}
+
+body.dark-theme .band-5 {
+    background-color: #323953; /* Bleu/violet sombre */
+}
+
+body.dark-theme .band-6 {
+    background-color: #363e5b; /* Le bleu/violet sombre le plus "clair" */
+}
+
+body.dark-theme .band h1 {
+    color: #e5e5ff; 
+}
+
+
+/* ---------------- */
+/* Second container */
+/* ---------------- */
+body.dark-theme .second-container {
+    background-color: #363e5b;
+}
+
+body.dark-theme .cloud-container img.cloud-light {
+    display: none;
+}
+body.dark-theme .cloud-container img.cloud-dark {
+    display: block; 
+}
+
+
+/* --- Text Container --- */
+body.dark-theme .second-container {
+    background-color: #363e5b; 
+}
+
+body.dark-theme .second-container .text-container {
+    background-color: #2529357b; 
+    color: #e0e5f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* ------ */
+/* FOOTER */
+/* ------ */
+body.dark-theme .footer {
+    color: #aaa;
+}
+
+body.dark-theme .footer .socials a {
+    color: #a0a8c4; /* Couleur claire pour texte/icône */
+    border-color: #a0a8c4; /* Bordure claire */
+}
+
+body.dark-theme .footer .socials a:hover {
+    background-color: #a0a8c4; /* Fond clair au survol */
+    color: #1a1d29; /* Texte sombre au survol */
+}

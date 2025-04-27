@@ -20,59 +20,129 @@
       <div class="header-right-group">
 
         <ul>
-            <!-- <li><a href="index.html">Accueil</a></li> -->
-            <!-- <li><a href="pages/a-propos.html">À propos</a></li> -->
-            <li class="dropdown-container"> <!-- Ajout d'une classe pour le conteneur -->
-                <a href="#"> <!-- Ajout d'un ID pour le JS -->
-                    À propos <i class="fas fa-caret-down"></i> <!-- Icône flèche (Font Awesome) -->
+            <li class="dropdown-container"> 
+                <a href="#">
+                    À propos <i class="fas fa-caret-down"></i> 
                 </a>
-                <ul class="dropdown-menu" id="projetsDropdown"> <!-- Le menu caché -->
+                <ul class="dropdown-menu" id="projetsDropdown"> 
                     <li><a href="pages/projet-web.html">Formation</a></li>
                     <li><a href="pages/projet-physique.html">Expériences</a></li>
-                    <!-- Ajoute autant de projets que nécessaire -->
                 </ul>
             </li>
             
-            <!-- Remplace l'ancien li par celui-ci -->
-            <li class="dropdown-container"> <!-- Ajout d'une classe pour le conteneur -->
-                <a href="#"> <!-- Ajout d'un ID pour le JS -->
-                    Mes projets <i class="fas fa-caret-down"></i> <!-- Icône flèche (Font Awesome) -->
+            <li class="dropdown-container">
+                <a href="#">
+                    Mes projets <i class="fas fa-caret-down"></i> 
                 </a>
-                <ul class="dropdown-menu" id="projetsDropdown"> <!-- Le menu caché -->
-                    <li><a href="pages/murmuration.html">Murmuration</a></li>
-                    <li><a href="pages/segregation-sociale.html">Segrégation sociale</a></li>
-                    <li><a href="pages/projets-en-cours.html">Autre Projet</a></li>
-                    <!-- Ajoute autant de projets que nécessaire -->
+                <ul class="dropdown-menu" id="projetsDropdown">
+                    <li>
+                        <h3>Python</h3>
+                        <ul>
+                            <li><a href="pages/murmuration.html">Murmuration</a></li>
+                            <li><a href="pages/segregation-sociale.html">Segrégation sociale</a></li>
+                            <li><a href="pages/projets-en-cours.html">Autre Projet</a></li>                            
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3>html/css</h3>
+                        <ul>
+                            <li><a href="https://corentinpradier.github.io">Mon site web</a></li>
+                            <li><a href="https://sportloisirculture.fr">Site web SLC</a></li>
+                        </ul>
+                    </li>
+
+                
                 </ul>
             </li>
         </ul>
 
         <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
             <div class="toggle-circle"></div>
-            <!-- Optionnel: Ajouter des icônes si vous le souhaitez -->
              <i class="fas fa-sun light-icon"></i>
              <i class="fas fa-moon dark-icon"></i>
         </button>      </div>
     </nav>
 
   <main>
-    <ul class="page-menu">
-        <li class="item-menu"><a href="#">Formation</a></li>
-        <li class="item-menu"><a href="#">Expériences</a></li>
-    </ul>
 
-    <div class="container">
-        <p>
-            <!-- Je m'appelle Corentin Pradier et en juillet 2024 j'ai terminé mes études de physique et de géoscience à Sorbonne Université en suivant la deuxième année du master SOAC (Sciences de l'Océan, de l'Atmosphère et du Climat). Durant cette dernière année je me suis spécialisé dans la science des systèmes météorologiques et des phénomènes climatiques. En plus de mon grand intérêt pour l'étude de ces phénomènes, je suis passionné par la modélisation et j'ai pu manipuler le modèle LMDz de l'IPSL (Institut Pierre Simon Laplace) durant mes cours. À la fin de mon année j'ai pu réaliser mon stage de fin d'étude au sein d'Airparif, l'association agréée de la surveillance de la qualité de l'air en Île-de-France, dans le service de modélisation. Durant ce stage j'ai travaillé sur la nouvelle version du modèle de chimie-transport CHIMERE (version 2023) et j'ai réalisé des tests de sensibilités afin de déterminer la plus-value du mode de couplage entre CHIMERE et le modèle de dynamique atmosphérique WRF dans le cadre d'une chaîne opérationnelle. En plus d'approfondir et de perfectionner mes connaissances en modélisation, j'ai pu en apprendre énormément sur la qualité de l'air ! -->
-        </p>
+    <div class="hero-bands">
+        <div class="band band-1">
+            &nbsp; 
+        </div>
+        <div class="band band-2">
+            &nbsp;
+        </div>
+        <div class="band band-3">
+            <h1>Bonjour,</h1>
+        </div>
+        <div class="band band-4">
+            <h1>Bienvenue,</h1>
+        </div>
+        <div class="band band-5">
+            <h1>Bonne visite !</h1>
+        </div>
+        <div class="band band-6">
+            &nbsp;
+        </div>
+    </div>
 
-        <h2>Mes </h2>
+
+    <div class="second-container">
+
+        <div class="cloud-container">
+            <div href="#" class="cloud-item">
+                <img class="cloud-light cloud1" src="img/nuage1-light.png" alt="nuage clair 1">
+                <img class="cloud-dark cloud1"  src="img/nuage1-dark.png"  alt="nuage sombre 1">
+            </div>
+
+            <div href="#" class="cloud-item">
+                <img class="cloud-light cloud2" src="img/nuage2-light.png" alt="nuage clair 2">
+                <img class="cloud-dark cloud2"  src="img/nuage2-dark.png"  alt="nuage sombre 2">
+            </div>
+
+            <div class="cloud-item">
+                <img class="cloud-light cloud3" src="img/nuage3-light.png" alt="nuage clair 3">
+                <img class="cloud-dark cloud3"  src="img/nuage3-dark.png"  alt="nuage sombre 3">
+            </div>
+
+            <div class="cloud-item">
+                <img class="cloud-light cloud4" src="img/nuage4-light.png" alt="nuage clair 4">
+                <img class="cloud-dark cloud4"  src="img/nuage4-dark.png"  alt="nuage sombre 4">
+            </div>
+        </div>
+
+        <div class="text-container">
+            <p class="title-text">
+                Je m'appelle Corentin Pradier. 
+            </p>
+            <p>
+                Je suis physicien de formation avec une spécialisation en sciences de l'atmosphère
+                et du climat. J'ai décidé de me spécialiser 
+                dans la science des systèmes météorologiques et des phénomènes 
+                climatiques afin de mieux comprendre et modéliser les phénomènes 
+                atmosphériques et environnementaux. 
+                Dans un monde et un climat qui changent de plus en plus vite, je 
+                trouvais indispensable de travailler 
+                sur ces phénomènes qui nous touchent tous !
+                <br>
+                <br>
+                Ce site web est mon portfolio : vous y découvrirez ma formation, 
+                mes expériences professionnelles et mes projets personnels, 
+                pour la plupart développés en Python. N'hésitez pas à naviguer !
+    
+            </p>
+        </div>
+    </div>
+    <div class="third-container">
+        <h1 class="title-text">Mes projets</h1>
     </div>
 
   </main>
 
   <nav class="footer">
     <div class="socials">
+        <a href="mailto:corentin.pradier.pro@gmail.com"><i class="las la-envelope"></i>Email</a>
         <a href="https://www.linkedin.com/in/corentin-pradier-120194223" target="_blank"><i class="lab la-linkedin"></i>LinkedIn</a>
         <a href="https://github.com/corentinpradier" target="_blank"><i class="lab la-github"></i>GitHub</a>
     </div>
@@ -80,10 +150,9 @@
     <p>&copy; 2023 Corentin Pradier</p>
   </nav>
 
-  <script src="json/header.js"></script>
   <script src="json/dark-button.js"></script>
   <script src="json/dropdown-menu.js"></script>
-
+  <script src="json/cloud-animation.js"></script>
 
 </body>
 </html>

@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f0f0;
-    /* border-radius: 60px; */
+    background-color: #fdfeff;
     padding: 0px 40px;
     margin: 0;
     position: sticky;
@@ -13,17 +12,15 @@
     z-index: 1000;
     transition: top 0.4s ease-in-out;
     box-sizing: border-box; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    height: 110px;
 }
 
-/* .header--hidden {
-    top: -100px;
-} */
-
 .header-right-group {
-    display: flex;         /* Rend ce groupe flexible */
-    align-items: center;   /* Aligne verticalement la liste et le bouton */
-    gap: 20px;             /* Définit l'espace entre la liste ul et le bouton dark mode */
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .header.scrolled {
@@ -43,24 +40,22 @@
     display: flex;
     list-style-type: none;
     align-items: center;
-    background-color: aliceblue;
-    border-radius: 30px;
-    padding: 10px 10px;
+    padding: 0 10px;
 }
 
 .header ul li {
     display: inline-block;
-    padding: 0px 40px;
+    padding: 0px 5px;
     font-size: 1.3rem;
 }
 
 .header ul li > a,
 .header .title {
-    display: inline-flex; /* Pour bien aligner le texte et l'icône */
+    display: inline-flex;
     align-items: center;
-    padding: 10px 20px; /* Ajuster le padding ici */
+    padding: 10px 20px;
     text-decoration: none;
-    color: black;
+    color: #555;
     border-radius: 30px;
 
 }
@@ -74,55 +69,90 @@
 
 /* Menu déroulant */
 .header .dropdown-menu {
-    display: none; /* Caché par défaut */
+    display: none;
     position: absolute;
     justify-items: center;
-    top: 100%; /* Juste en dessous du lien parent */
-    left: 50%; /* Commence au milieu du li parent */
-    transform: translateX(-50%); /* Centre le menu par rapport au li parent */
-    background-color: white; /* Fond du menu */
-    min-width: 200px; /* Largeur minimale */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Ombre portée */
-    border-radius: 30px;
-    padding: 10px 0; /* Padding vertical, pas horizontal */
-    margin-top: 8px; /* Petit espace entre le lien et le menu */
-    list-style: none; /* Enlève les puces */
-    z-index: 1001; /* S'assurer qu'il est au-dessus des autres éléments */
-    text-align: left; /* Aligner le texte à gauche */
+    align-items: flex-start;
+    top: 100%; 
+    left: 50%; 
+    background-color: #fdfeff;
+    transform: translateX(-50%);
+    min-width: 200px; 
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 8px;
+    list-style: none;
+    z-index: 1001;
+    text-align: left;
 }
 
 /* Style pour afficher le menu */
 .dropdown-menu.show {
-    display: block;
+    display: flex; /* Change le display par défaut quand il est montré */
+    gap: 20px; /* Espace entre les colonnes (catégories) */
+    flex-wrap: nowrap; /* Empêche le retour à la ligne des colonnes */
 }
 
 .header ul li.dropdown-container.open > a .fa-caret-down {
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
 }
 
 /* Éléments dans le menu déroulant */
-.dropdown-menu li {
-    display: block; /* Les éléments s'empilent verticalement */
-    padding: 0; /* Reset le padding du li parent */
+.header .dropdown-menu > li {
+    display: block;
+    padding: 0;
 }
 
-.dropdown-menu li a {
-    display: block; /* Toute la ligne est cliquable */
-    padding: 10px 20px; /* Padding des liens du menu */
-    color: #333; /* Couleur du texte */
-    font-size: 1rem; /* Taille de police ajustée */
+.header .dropdown-menu > li > h3 {
+    margin: 0 0 10px 0; /* Espace sous le titre */
+    padding: 5px 20px; /* Un peu d'air autour du titre */
+    font-size: 0.9em; /* Taille légèrement réduite */
+    color: #555;
+    border-bottom: 1px solid #eee; /* Séparateur visuel léger */
+    white-space: nowrap; /* Empêche le titre de passer à la ligne */
+}
+
+.header .dropdown-menu > li > ul {
+    display: block;
+    list-style: none; /* Enlève les puces */
+    padding: 0; /* Enlève le padding par défaut */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+.header .dropdown-menu > li > ul li {
+    display: block; /* Assure l'empilement vertical (comportement par défaut) */
+    padding: 0; /* Réinitialise le padding */
+    margin: 0; /* Réinitialise la marge */
+}
+
+.header .dropdown-menu > li > ul li a {
+    display: block;
+    padding: 5px 20px;
+    color: #333;
+    font-size: 1rem;
     text-decoration: none;
-    white-space: nowrap; /* Empêche le retour à la ligne */
+    white-space: nowrap;
     transition: background-color 0.2s ease;
 }
 
-.dropdown-menu li a:hover {
-    background-color: #f0f0f0; /* Effet au survol */
-    color: #111;
+.header .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
+.header .dropdown-container a:hover,
+.header .dropdown-menu a:hover {
+    color: #007BFF;
+}
 
+/* ---------------- */
 /* bouton dark mode */
+/* ---------------- */
 .dark-mode-toggle {
     background-color: #222;
     border: none;
@@ -137,7 +167,7 @@
     outline: none;
     box-sizing: border-box;
     justify-content: space-between;
-    flex-shrink: 0; /* Empêche le bouton de rétrécir ! */
+    flex-shrink: 0;
 }
 
 .toggle-circle {
@@ -153,22 +183,21 @@
 
 .dark-mode-toggle.active {
     display: flex;
-    background-color: #eee; /* Optionnel: changer le fond du rail en mode light */
+    background-color: #eee;
 }
 
 .dark-mode-toggle.active .toggle-circle {
-    transform: translateX(34px); /* Déplace le cercle vers la droite (largeur_bouton - largeur_cercle - padding_gauche * 2) */
-                                 /* 70px - 27px - 4px - 4px = 35px */
+    transform: translateX(34px);
 }
 
 .dark-mode-toggle .light-icon,
 .dark-mode-toggle .dark-icon {
-    font-size: 16px; /* Taille des icônes */
-    line-height: 27px; /* Pour centrer verticalement */
+    font-size: 16px;
+    line-height: 27px;
     color: #ffcc33; /* Couleur soleil */
     transition: opacity 0.3s ease;
     z-index: 0; /* Derrière le cercle */
-    padding: 0 5px; /* Espacement interne */
+    padding: 0 5px; 
 }
 
 .dark-mode-toggle .dark-icon {
@@ -189,4 +218,3 @@
 .dark-mode-toggle.active .light-icon {
     opacity: 1; /* Cache l'icône soleil en mode dark */
 }
-

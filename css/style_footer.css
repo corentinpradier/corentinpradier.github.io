@@ -1,6 +1,40 @@
 .footer {
+    text-align: center;
     border-top: 1px solid rgb(163, 163, 163);
     width: 90%;
     margin: 0 auto;
     padding: 20px 0;
+    padding-bottom: 0;
+}
+
+.footer .socials a {
+    display: inline-block;
+    font-size: 1.3rem; 
+    text-decoration: none;
+    color: #2c3e50;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #2c3e50;
+    border-radius: 30px;
+    padding: 8px 10px;
+
+    margin: 5px; /* Ajoute un peu d'espace entre les boutons */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Pour un effet au survol */
+}
+
+.footer .socials a:hover {
+    background-color: #2c3e50; 
+    color: #ffffff; 
+    cursor: pointer;
+}
+
+.footer .las,
+.footer .lab {
+    padding-right: 5px;
+}
+
+.footer p:last-child {
+    font-size: medium;
+    margin-bottom: 0;
 }

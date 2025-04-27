@@ -1,50 +1,222 @@
 /* Styles de base (Mode Clair - par défaut) */
 body {
     font-family: "Roboto", sans-serif;
-    text-align: center;
     font-size: 24px;
     overflow-x: hidden;
-    /* padding-top: 100px; */
     margin: 0;
-    background-color: #f0f0f0; /* Fond clair */
-    color: #333333;       /* Texte foncé */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+    background-color: #c4d8ff;
+    color: #333333; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container {
+/* -------------------------------- */
+/* Conteneur principal des bandeaux */
+/* -------------------------------- */
+.hero-bands {
     display: flex;
-    margin: 20px auto;
     flex-direction: column;
-    align-items: center;
+     min-height: calc(100vh - 110px); /*100hv = hauteur de la fenetre et 110px = hauteur du header */
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden; 
+}
+
+.band {
+    height: calc((100vh - 110px) / 6); /* NOmbre de bandes : 6; 110px = hauteur du header */
+    display: flex;
     justify-content: center;
-    width: 90%;
-    /* border-top: 1px solid rgb(200, 200, 200);  */
-    height: 1000px; /* Évitez les hauteurs fixes si possible, laissez le contenu définir la hauteur */
-    min-height: 60vh; /* Hauteur minimale */
+    align-items: center;
+    width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    /* background-color: #f9f9f9;  */
-    /* border-radius: 8px;  */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-/* Menu de haut de page */
-.page-menu {
+.band-1 {
+    background-color: #f8faff;
+}
+.band-2 {
+    background-color: #f0f5ff;
+}
+.band-3 {
+    background-color: #e8f0ff;
+}
+.band-4 {
+    background-color: #dbe8ff;
+}
+.band-5 {
+    background-color: #d0e0ff;
+}
+.band-6 {
+    background-color: #c4d8ff;
+}
+
+.band h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+    text-align: left;
+    margin-right: auto;
+    padding:0 50px;
+    transition: color 0.3s ease;
+}
+
+
+/* ------------------------ */
+/* --- Second container --- */
+/* ------------------------ */
+.second-container {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 5px;
-    margin: 20px auto;
-    background-color: #333;
-    width: 300px;
-    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #c4d8ff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
-.page-menu li {
-    margin: 0 10px;
+/* ----------------------- */
+/* --- Cloud container --- */
+/* ----------------------- */
+.cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 20px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 0px;
 }
 
-.item-menu a {
-    text-decoration: none;
-    color: white;
+.cloud-item {
+    position: relative;
+    display: inline-block; 
+    line-height: 0; 
+    transition: transform 0.3s ease-in-out;
+    max-width: 22%;
+    text-align: center;
+    margin: 0;
+
+}
+
+.cloud-container .cloud-item:nth-of-type(1) { margin-top: 10px;}
+.cloud-container .cloud-item:nth-of-type(2) { margin-top: 70px;}
+.cloud-container .cloud-item:nth-of-type(3) { margin-top: 0px;}
+.cloud-container .cloud-item:nth-of-type(4) { margin-top: 40px;}
+
+
+.cloud-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 0.8s ease-out, transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cloud-container .cloud-item:nth-of-type(1) img { transition-delay: 0.1s; }
+.cloud-container .cloud-item:nth-of-type(2) img { transition-delay: 0.3s; }
+.cloud-container .cloud-item:nth-of-type(3) img { transition-delay: 0.2s; }
+.cloud-container .cloud-item:nth-of-type(4) img { transition-delay: 0.4s; }
+
+
+.cloud-item:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cloud-item:hover img {
+    opacity: 1;
+
+    z-index: 10; 
+}
+
+.cloud-container img.cloud-dark {
+    display: none;
+}
+
+.cloud-container.visible img {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+
+/* ---------------------- */
+/* --- Text container --- */
+/* ---------------------- */
+.second-container .text-container {
+    background-color: #ffffff88;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    width: 70%;
+    max-width: 900px;
+    min-height: auto;
+    padding: 40px 50px; 
+    box-sizing: border-box; 
+    margin-top: 0; 
+    margin-bottom: 20px;
+
+    opacity: 0;
+    transform: translateY(100px);
+
+    transition: opacity 0.8s ease-out 1s, /* Délai légèrement après les nuages */
+                transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.6s, /* Délai légèrement après les nuages */
+                background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+
+    text-align: left;
+    
+}
+
+.cloud-container.visible + .text-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.second-container .title-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.second-container .text-container p {
+    margin-top: 0; 
+    margin-bottom: 1.2em; 
+}
+
+.second-container .text-container p:last-child {
+    margin-bottom: 0px; 
+}
+
+/* ---------------- */
+/* Third container */
+/* ---------------- */
+.third-container {
+    width: 90%;
+    border-top: 1px solid rgb(163, 163, 163);
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.third-container .title-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px0;
+    margin-left: 40px;
+
 }
