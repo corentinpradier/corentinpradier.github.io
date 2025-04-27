@@ -14,15 +14,12 @@ Ces projets n'ont (pour l'instant) fait l'objet d'aucune relecture par des pairs
 
 ## Contributions et Améliorations
 
-Libre à chacun de s'en inspirer et surtout **n'hésitez pas à** si vou voyez une erreur ou une coquille à proposer des corrections ou des améliorations (du site et des projets). Je ne suis pas un professionnel alors toutes les suggestions sont les bienvenues !
+**N'hésitez pas** si vous voyez une erreur ou une coquille à proposer des corrections ou des améliorations (du site et des projets). Je ne suis pas un professionnel alors toutes les suggestions sont les bienvenues !
 
 N'hésitez surtout pas à 
 
 * Ouvrir une **Issue** pour en discuter.
 * Proposer une **Pull Request** avec vos corrections/améliorations.
-
-
----
 
 🧑‍💻 Bonne lecture ! 
 
