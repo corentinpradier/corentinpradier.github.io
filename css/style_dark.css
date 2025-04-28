@@ -104,6 +104,34 @@ body.dark-theme .second-container .text-container {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
 
+/* --------------- */
+/* Third container */
+/* --------------- */
+body.dark-theme .third-container {
+    background: linear-gradient(to bottom, #363e5b, #7F5056);
+}
+
+body.dark-theme .third-container .main-card-container .first-card,
+body.dark-theme .third-container .main-card-container .second-card,
+body.dark-theme .third-container .main-card-container .other-card {
+    background-color: #2529357b; 
+    color: #e0e5f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* Flèches de navigation */
+body.dark-theme .carousel-arrow {
+    background-color: rgba(40, 40, 50, 0.7);
+    color: #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+body.dark-theme .carousel-arrow:hover {
+    background-color: rgba(50, 50, 60, 0.9);
+    color: #fff;
+}
+
 
 /* ------ */
 /* FOOTER */

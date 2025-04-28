@@ -1,3 +1,7 @@
+:root {
+    --header-height: 110px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -14,7 +18,7 @@
     box-sizing: border-box; 
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    height: 110px;
+    height: var(--header-height);
 }
 
 .header-right-group {

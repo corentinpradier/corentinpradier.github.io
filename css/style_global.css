@@ -1,4 +1,8 @@
 /* Styles de base (Mode Clair - par défaut) */
+:root {
+    --header-height: 110px;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     font-size: 24px;
@@ -15,14 +19,14 @@ body {
 .hero-bands {
     display: flex;
     flex-direction: column;
-     min-height: calc(100vh - 110px); /*100hv = hauteur de la fenetre et 110px = hauteur du header */
+     min-height: calc(100vh - var(--header-height)); /*100hv = hauteur de la fenetre et 110px = hauteur du header */
     width: 100%;
     margin-bottom: 0;
     overflow: hidden; 
 }
 
 .band {
-    height: calc((100vh - 110px) / 6); /* NOmbre de bandes : 6; 110px = hauteur du header */
+    height: calc((100vh - var(--header-height)) / 6); /* NOmbre de bandes : 6; 110px = hauteur du header */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,11 +103,13 @@ body {
     position: relative;
     display: inline-block; 
     line-height: 0; 
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
     max-width: 22%;
     text-align: center;
     margin: 0;
 
+    transition: transform 0.4s cubic-bezier(0.25, 0.5, 0.25, 1);
+    transform: translate(0px, 0px) rotate(0deg) scale(1.1);
 }
 
 .cloud-container .cloud-item:nth-of-type(1) { margin-top: 10px;}
@@ -130,7 +136,7 @@ body {
 .cloud-container .cloud-item:nth-of-type(4) img { transition-delay: 0.4s; }
 
 
-.cloud-item:hover {
+/* .cloud-item:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
 }
@@ -139,7 +145,7 @@ body {
     opacity: 1;
 
     z-index: 10; 
-}
+} */
 
 .cloud-container img.cloud-dark {
     display: none;
@@ -207,16 +213,114 @@ body {
 /* Third container */
 /* ---------------- */
 .third-container {
-    width: 90%;
-    border-top: 1px solid rgb(163, 163, 163);
+    width: 100%;
+    /* border-top: 1px solid rgb(163, 163, 163); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     padding: 20px 0;
+    /* Position relative pour les flèches absolues  */
+    position: relative;
+
 }
 
 .third-container .title-text {
     font-size: 3rem;
     font-weight: bold;
-    margin: 20px0;
-    margin-left: 40px;
+    align-self: flex-start;
+    margin: 20px 20px 20px 10%;
+}
 
+.main-card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px 5%;
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+    scroll-behavior: smooth;
+}
+
+.main-card-container::-webkit-scrollbar {
+    display: none; /* Cache la barre de défilement */
+}
+
+.third-container .main-card-container .first-card,
+.third-container .main-card-container .second-card,
+.third-container .main-card-container .other-card {
+    flex-shrink: 0;
+    width: 30%;
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff88;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 0;
+
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    scroll-snap-align: start;
+}
+
+.third-container .main-card-container .first-card:hover,
+.third-container .main-card-container .second-card:hover,
+.third-container .main-card-container .other-card:hover {
+    transform: scale(1.05); /* Grossit la carte de 5% */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Ombre un peu plus prononcée */
+    z-index: 5; /* S'assure que la carte survolée passe au-dessus des autres */
+}
+
+
+/* Flèches de navigation */
+.carousel-arrow {
+    position: absolute; /* Positionnement par rapport à .third-container */
+    top: 60%; /* Centre verticalement (approximatif, ajuste si besoin) */
+    transform: translateY(-50%); /* Ajustement fin du centrage vertical */
+    background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+    border: none;
+    border-radius: 50%; /* Rond */
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem; /* Taille de l'icône flèche */
+    color: #333;
+    cursor: pointer;
+    z-index: 10; /* Au-dessus des cartes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.carousel-arrow.left {
+    left: 2%;
+}
+
+.carousel-arrow.right {
+    right: 2%;
+}
+
+.carousel-arrow.disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.card {
+    text-decoration: none;
+    color: #333;
 }
