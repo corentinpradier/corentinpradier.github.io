@@ -234,7 +234,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        width: 75%;
+        width: 60%;
         max-width: 300px; 
         height: 100vh;
         background-color: var(--mobile-menu-bg, #fdfeff);
@@ -324,7 +324,7 @@
 
     .header .dropdown-menu > li > h3 {
         font-size: 0.8em;
-        padding: 8px 25px 5px 10px; 
+        padding: 8px 25px 5px 25px; 
         color: var(--mobile-menu-text, #555);
         border: none;
         margin: 0;
@@ -332,7 +332,6 @@
 
         width: 80%;
         box-sizing: border-box;
-
     }
 
     .header .dropdown-menu > li,
@@ -346,7 +345,7 @@
     }
 
     .header .dropdown-menu > li > ul li a {
-        padding: 10px 25px 10px 35px;
+        padding: 10px 25px 10px 45px;
         font-size: 0.9rem;
     }
 
