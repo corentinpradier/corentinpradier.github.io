@@ -93,9 +93,9 @@
 
 /* Style pour afficher le menu */
 .dropdown-menu.show {
-    display: flex; /* Change le display par défaut quand il est montré */
-    gap: 20px; /* Espace entre les colonnes (catégories) */
-    flex-wrap: nowrap; /* Empêche le retour à la ligne des colonnes */
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; 
 }
 
 .header ul li.dropdown-container.open > a .fa-caret-down {
@@ -109,25 +109,25 @@
 }
 
 .header .dropdown-menu > li > h3 {
-    margin: 0 0 10px 0; /* Espace sous le titre */
-    padding: 5px 20px; /* Un peu d'air autour du titre */
-    font-size: 0.9em; /* Taille légèrement réduite */
+    margin: 0 0 10px 0; 
+    padding: 5px 20px;
+    font-size: 0.9em;
     color: #555;
-    border-bottom: 1px solid #eee; /* Séparateur visuel léger */
-    white-space: nowrap; /* Empêche le titre de passer à la ligne */
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
 }
 
 .header .dropdown-menu > li > ul {
     display: block;
-    list-style: none; /* Enlève les puces */
-    padding: 0; /* Enlève le padding par défaut */
-    margin: 0; /* Enlève la marge par défaut */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .header .dropdown-menu > li > ul li {
-    display: block; /* Assure l'empilement vertical (comportement par défaut) */
-    padding: 0; /* Réinitialise le padding */
-    margin: 0; /* Réinitialise la marge */
+    display: block; 
+    padding: 0;
+    margin: 0; 
 }
 
 .header .dropdown-menu > li > ul li a {
@@ -222,3 +222,125 @@
 .dark-mode-toggle.active .light-icon {
     opacity: 1; /* Cache l'icône soleil en mode dark */
 }
+
+/* Cache le bouton burger sur grand écran */
+.mobile-nav-toggle {
+    display: none;
+}
+
+/* --- Styles pour Mobile --- */
+@media (max-width: 768px) {
+    .header .header-right-group {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        max-width: 300px; 
+        height: 100vh;
+        background-color: var(--mobile-menu-bg, #fdfeff);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 80px 0 20px 0; 
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.15); 
+        z-index: 1001;
+        gap: 0;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        overflow-y: auto;
+        display: flex;
+    }
+
+    .header .header-right-group.active {
+        transform: translateX(0); 
+    }
+
+    .header ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .header ul li {
+        display: block;
+        padding: 0;
+        text-align: left;
+        border-bottom: 1px solid var(--mobile-menu-separator, #e5e5ff);
+    }
+    
+     .header ul li:first-child {
+        border-top: 1px solid var(--mobile-menu-separator, #e5e5ff);
+     }
+
+    .header ul li > a,
+    .header .dropdown-menu li a {
+        padding: 15px 25px;
+        justify-content: flex-start;
+        color: var(--mobile-menu-text, #333);
+    }
+
+    /* Ajuste le bouton dark mode pour le menu latéral */
+    .dark-mode-toggle {
+        margin: 30px auto 20px auto; 
+    }
+
+    /* Ajuste le bouton burger (il reste dans le header) */
+    .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #555;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1002;
+        color: #2c3e50;
+    }
+
+    .header .dropdown-menu {
+        display: none;
+        /* --- Styles pour l'affichage vertical --- */
+        position: static;
+        box-shadow: none;
+        border-radius: 0; 
+        padding: 0; 
+        margin: 0; 
+        /* background-color: rgba(0,0,0,0.05);  */
+        min-width: auto; 
+        transform: none; 
+        gap: 0; 
+        flex-direction: column; 
+        align-items: stretch; 
+        width: 100%; 
+    }
+
+    body.dark-mode .header .dropdown-menu {
+         background-color: rgba(255,255,255,0.05); 
+    }
+
+    .header .dropdown-menu.mobile-open {
+        display: block; 
+    }
+
+    .header .dropdown-menu > li > h3 {
+        font-size: 0.8em;
+        padding: 8px 25px 5px 10px; 
+        color: var(--mobile-menu-text, #555);
+        border: none;
+        margin: 0;
+        border-bottom: 2px solid var(--mobile-menu-separator, #e5e5ff);
+    }
+
+    .header .dropdown-menu > li,
+    .header .dropdown-menu > li > ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 200px;
+    }
+
+    .header .dropdown-menu > li > ul li a {
+        padding: 10px 25px 10px 35px;
+        font-size: 0.9rem;
+    }
+} 

@@ -17,6 +17,12 @@
 <body>
     <nav class="header">
       <a class="title" href="index.html">Corentin Pradier</a>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Ouvrir le menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+
       <div class="header-right-group">
 
         <ul>
@@ -40,7 +46,7 @@
                         <ul>
                             <li><a href="pages/murmuration.html">Murmuration</a></li>
                             <li><a href="pages/segregation-sociale.html">Segrégation sociale</a></li>
-                            <li><a href="pages/projets-en-cours.html">Autre Projet</a></li>                            
+                            <li><a href="pages/attracteur-de-lorenz.html">Attracteur de Lorenz</a></li>                            
                         </ul>
                     </li>
 
@@ -113,9 +119,6 @@
         </div>
 
         <div class="text-container">
-            <p class="title-text">
-                Je m'appelle Corentin Pradier. 
-            </p>
             <p>
                 Je suis physicien de formation avec une spécialisation en sciences de l'atmosphère
                 et du climat. J'ai décidé de me spécialiser 
@@ -130,7 +133,9 @@
                 Ce site web est mon portfolio : vous y découvrirez ma formation, 
                 mes expériences professionnelles et mes projets personnels, 
                 pour la plupart développés en Python. N'hésitez pas à naviguer !
-    
+            </p>
+            <p class="signature">
+                - Corentin Pradier -
             </p>
         </div>
     </div>
@@ -146,23 +151,23 @@
 
 
         <div class="main-card-container" id="projectCarousel">
-            <a href="#" class="card first-card">
-                <!-- Contenu de la première carte -->
-                <h2>Projet A</h2>
-                <p>Description du projet A...</p>
+            <a href="#" class="card card-murmuration">
+                <h2>Murmuration</h2>
+                <p>Modélisation simple de mouvements de groupes sans leader 
+                    en se basant sur le modèle de Vicsek.
+                </p>
             </a>
 
-            <a href="#" class="card second-card">
-                <!-- Contenu de la deuxième carte -->
-                <h2>Projet B</h2>
-                <p>Description du projet B...</p>
+            <a href="#" class="card card-segregation">
+                <h2>Ségrégation sociale</h2>
+                <p>Modélisation simple du phénomène de ségrégation sociale.</p>
             </a>
 
-            <!-- Ajoute d'autres cartes ici si nécessaire -->
-            <a href="#"class="card other-card">
-                 <h2>Projet C</h2>
-                 <p>Description du projet C...</p>
+            <a href="#" class="card card-lorenz">
+                 <h2>Attracteur de Lorenz</h2>
+                 <p>Simulation de l'attracteur de Lorenz et ...</p>
             </a>
+            
              <a href="#" class="card other-card">
                  <h2>Projet D</h2>
                  <p>Description du projet D...</p>
@@ -190,6 +195,7 @@
   <script src="json/cloud-animation.js"></script>
   <script src="json/cloud-animation-fancy.js"></script>
   <script src="json/carousel.js"></script>
+  <script src="json/mobile-nav.js"></script>
 
 </body>
 </html>

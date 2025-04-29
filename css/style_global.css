@@ -209,6 +209,14 @@ body {
     margin-bottom: 0px; 
 }
 
+.signature {
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #555;
+    font-style: italic;
+}
+
 /* ---------------- */
 /* Third container */
 /* ---------------- */
@@ -229,7 +237,7 @@ body {
     font-size: 3rem;
     font-weight: bold;
     align-self: flex-start;
-    margin: 20px 20px 20px 10%;
+    margin: 20px 20px 20px 6%;
 }
 
 .main-card-container {
@@ -250,50 +258,20 @@ body {
     display: none; /* Cache la barre de défilement */
 }
 
-.third-container .main-card-container .first-card,
-.third-container .main-card-container .second-card,
-.third-container .main-card-container .other-card {
-    flex-shrink: 0;
-    width: 30%;
-    min-height: 300px;
-
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff88;
-    border-radius: 15px;
-    box-sizing: border-box;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 0;
-
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    scroll-snap-align: start;
-}
-
-.third-container .main-card-container .first-card:hover,
-.third-container .main-card-container .second-card:hover,
-.third-container .main-card-container .other-card:hover {
-    transform: scale(1.05); /* Grossit la carte de 5% */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Ombre un peu plus prononcée */
-    z-index: 5; /* S'assure que la carte survolée passe au-dessus des autres */
-}
-
-
 /* Flèches de navigation */
 .carousel-arrow {
-    position: absolute; /* Positionnement par rapport à .third-container */
-    top: 60%; /* Centre verticalement (approximatif, ajuste si besoin) */
-    transform: translateY(-50%); /* Ajustement fin du centrage vertical */
-    background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+    position: absolute; 
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
-    border-radius: 50%; /* Rond */
+    border-radius: 50%;
     width: 45px;
     height: 45px;
-    font-size: 1.5rem; /* Taille de l'icône flèche */
+    font-size: 1.5rem;
     color: #333;
     cursor: pointer;
-    z-index: 10; /* Au-dessus des cartes */
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,7 +298,146 @@ body {
     pointer-events: none;
 }
 
-.card {
+.third-container .main-card-container .card {
+    flex-shrink: 0;
+    width: 30%;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
     text-decoration: none;
-    color: #333;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    scroll-snap-align: start;
 }
+
+.card.card-murmuration {
+    background-image: url('../img/murmuration.png');
+}
+
+.card.card-segregation {
+    background-image: url('../img/segregation.png');
+}
+
+.card h2 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.card p {
+    flex-shrink: 0;
+
+    background-color: rgba(255, 255, 255, 0.896);
+    color: #333;
+
+    margin: 0;
+    padding: 15px 20px;
+
+    border-radius: 0 0 15px 15px;
+
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.third-container .main-card-container .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    z-index: 5;
+}
+
+/* --- Styles pour Mobile --- */
+@media (max-width: 768px) { 
+    body {
+        font-size: 18px;
+    }
+
+    .hero-bands {
+        min-height: auto; 
+    }
+
+    .band {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .band h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem); 
+        padding: 0 20px;
+    }
+
+    .second-container {
+        margin-right: 0;
+    }
+
+    .cloud-container {
+        padding-bottom: 50px;
+    }
+
+    .cloud-item {
+        max-width: 45%;
+        margin-top: 20px !important;
+    }
+
+    .cloud-container .cloud-item:nth-of-type(even) img { transition-delay: 0.2s; }
+    .cloud-container .cloud-item:nth-of-type(odd) img { transition-delay: 0.1s; }
+
+    .second-container .text-container {
+        width: 90%; 
+        padding: 25px 20px;
+        font-size: 1rem;
+    }
+
+    .third-container .title-text {
+        font-size: 2rem; 
+        margin: 20px 20px 20px 5%;
+    }
+
+    .main-card-container {
+        width: 100%;
+        padding: 15px 12.5%;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .third-container .main-card-container .card {
+        width: 75%;
+        min-height: 300px;
+        scroll-snap-align: center;
+    }
+
+    .carousel-arrow {
+        top: 55%;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .carousel-arrow.left { left: 1%; }
+    .carousel-arrow.right { right: 1%; }
+
+} 
