@@ -234,7 +234,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        width: 60%;
+        width: 70%;
         max-width: 300px; 
         height: 100vh;
         background-color: var(--mobile-menu-bg, #fdfeff);
@@ -274,7 +274,7 @@
 
     .header ul li > a,
     .header .dropdown-menu li a {
-        padding: 15px 25px;
+        padding: 15px 45px;
         justify-content: flex-start;
         color: var(--mobile-menu-text, #333);
     }
@@ -324,11 +324,11 @@
 
     .header .dropdown-menu > li > h3 {
         font-size: 0.8em;
-        padding: 8px 25px 5px 25px; 
+        padding: 8px 25px 5px 45px; 
         color: var(--mobile-menu-text, #555);
         border: none;
         margin: 0;
-        border-bottom: 2px solid var(--mobile-menu-separator, #e5e5ff);
+        /* border-bottom: 2px solid var(--mobile-menu-separator, #e5e5ff); */
 
         width: 80%;
         box-sizing: border-box;
@@ -345,7 +345,7 @@
     }
 
     .header .dropdown-menu > li > ul li a {
-        padding: 10px 25px 10px 45px;
+        padding: 10px 25px 10px 65px;
         font-size: 0.9rem;
     }
 
